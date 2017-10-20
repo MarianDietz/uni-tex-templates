@@ -18,8 +18,13 @@
   \renewcommand{\@sheet}[0]{#1}
 }
 
+\newcommand{\@prof}[0]{}
+\newcommand{\prof}[1]{
+  \renewcommand{\@prof}[0]{#1}
+}
+
 \lhead{\@author \\ Universität des Saarlandes}
-\rhead{\@lecture \\ Übungsblatt \@sheet}
+\rhead{\@lecture \\ \@prof \\ Übungsblatt \@sheet}
 \cfoot{\thepage/\pageref{LastPage}}
 \pagestyle{fancy}
 
