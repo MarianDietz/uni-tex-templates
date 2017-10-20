@@ -6,6 +6,8 @@
 \usepackage{lastpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
 
 \newcommand{\@lecture}[0]{}
 \newcommand{\lecture}[1]{
@@ -20,3 +22,9 @@
 \rhead{\@lecture \\ Übungsblatt \@sheet}
 \cfoot{\thepage/\pageref{LastPage}}
 \pagestyle{fancy}
+
+% Text über dem Equiv:
+% \newcommand\equivt[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily #1}}}{\equiv}}}
+\newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\equiv}}
+
+\newcommand\TODO{\LARGE\colorbox{red}{TODO}}
