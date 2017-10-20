@@ -3,5 +3,20 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
+\usepackage{lastpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+\newcommand{\@lecture}[0]{}
+\newcommand{\lecture}[1]{
+  \renewcommand{\@lecture}[0]{#1}
+}
+\newcommand{\@sheet}[0]{}
+\newcommand{\sheet}[1]{
+  \renewcommand{\@sheet}[0]{#1}
+}
+
+\lhead{\@author \\ Universität des Saarlandes}
+\rhead{\@lecture \\ Übungsblatt \@sheet}
+\cfoot{\thepage/\pageref{LastPage}}
+\pagestyle{fancy}
