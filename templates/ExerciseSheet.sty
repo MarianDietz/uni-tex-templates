@@ -32,7 +32,11 @@
 % \newcommand\equivt[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily #1}}}{\equiv}}}
 \newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\equiv}}
 
-\newcommand\TODO{\LARGE\colorbox{red}{TODO}}
+\newcommand\TODO{
+	\begin{LARGE}
+		\colorbox{red}{TODO}
+	\end{LARGE}
+}
 
 \date{}
 \title{\@lecture\ - Übungsblatt \@sheet}
