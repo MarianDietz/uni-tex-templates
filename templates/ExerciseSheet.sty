@@ -28,3 +28,16 @@
 \newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\equiv}}
 
 \newcommand\TODO{\LARGE\colorbox{red}{TODO}}
+
+\date{}
+\title{\@lecture\ - Übungsblatt \@sheet}
+
+\renewcommand{\maketitle}[0]{
+  \mbox{\vspace{5em}}
+  \begin{center}
+    \large{\textbf{\@title}} \\
+    \@author
+  \end{center}
+}
+
+\newcommand{\task}[1]{\section*{#1}}
