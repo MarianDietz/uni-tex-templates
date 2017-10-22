@@ -25,8 +25,13 @@
   \renewcommand{\@prof}[0]{#1}
 }
 
+\newcommand{\@sheetname}[0]{Übungsblatt}
+\newcommand{\sheetname}[1]{
+  \renewcommand{\@sheetname}[0]{#1}
+}
+
 \lhead{\@author \\ Universität des Saarlandes}
-\rhead{\@lecture \\ \@prof \\ Übungsblatt \@sheet}
+\rhead{\@lecture \\ \@prof \\ \@sheetname\ \@sheet}
 \cfoot{\thepage/\pageref{LastPage}}
 \pagestyle{fancy}
 
@@ -41,7 +46,7 @@
 }
 
 \date{}
-\title{\@lecture\ - Übungsblatt \@sheet}
+\title{\@lecture\ - \@sheetname\ \@sheet}
 
 \renewcommand{\maketitle}[0]{
   \mbox{\vspace{5em}}
