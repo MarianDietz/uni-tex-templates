@@ -10,6 +10,8 @@
 \usepackage{color}
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{float}
 
 \newcommand{\@lecture}[0]{}
 \newcommand{\lecture}[1]{
@@ -39,7 +41,8 @@
 
 % Text über dem Equiv:
 % \newcommand\equivt[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily #1}}}{\equiv}}}
-\newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\equiv}}
+\newcommand\equalt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\hspace{1.3cm}=\hspace{1.3cm}}}
+\newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\hspace{1.3cm}\equiv\hspace{1.3cm}}}
 
 \newcommand\TODO{
 	\begin{LARGE}
