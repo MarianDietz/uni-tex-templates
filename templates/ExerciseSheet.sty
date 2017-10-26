@@ -18,6 +18,12 @@
 \newcommand{\lecture}[1]{
   \renewcommand{\@lecture}[0]{#1}
 }
+
+\newcommand{\@group}[0]{}
+\newcommand{\group}[1]{
+  \renewcommand{\@group}[0]{#1}
+}
+
 \newcommand{\@sheet}[0]{}
 \newcommand{\sheet}[1]{
   \renewcommand{\@sheet}[0]{#1}
@@ -37,7 +43,7 @@
 }
 
 \lhead{\@author \\ Universität des Saarlandes}
-\rhead{\@lecture \\ \@prof \\ \@sheetname\ \@sheet}
+\rhead{\@lecture, \@group \\ \@prof \\ \@sheetname\ \@sheet}
 \cfoot{\thepage/\pageref{LastPage}}
 \pagestyle{fancy}
 
@@ -53,7 +59,7 @@
 }
 
 \date{}
-\title{\@lecture\ - \@sheetname\ \@sheet}
+\title{\@lecture, \@group\ - \@sheetname\ \@sheet}
 
 \renewcommand{\maketitle}[0]{
   \mbox{\vspace{5em}}
