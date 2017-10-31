@@ -13,37 +13,44 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{ifthen}
 
-\newcommand{\@lecture}[0]{}
-\newcommand{\lecture}[1]{
-  \renewcommand{\@lecture}[0]{#1}
-}
+\def\sheetlanguageGerman{german}
+\def\sheetlanguageEnglish{english}
 
-\newcommand{\@group}[0]{}
-\newcommand{\group}[1]{
-  \renewcommand{\@group}[0]{#1}
-}
+\def\@sheetlanguage{\sheetlanguageGerman}
+\DeclareOption{en}{\def\@sheetlanguage{\sheetlanguageEnglish}}
+\DeclareOption{de}{\def\@sheetlanguage{\sheetlanguageGerman}}
+\ProcessOptions\relax
 
-\newcommand{\@sheet}[0]{}
-\newcommand{\sheet}[1]{
-  \renewcommand{\@sheet}[0]{#1}
-}
+\newcommand{\lang}[2]{\ifthenelse{\equal{\@sheetlanguage}{\sheetlanguageGerman}}{#1}{#2}}
 
-\newcommand{\@prof}[0]{}
-\newcommand{\prof}[1]{
-  \renewcommand{\@prof}[0]{#1}
-}
+\newcommand{\lectureandgroup}{\@lecture\ifx\@group\empty\else, \@group\fi}
+
+\newcommand{\lecture}[1]{\def\@lecture{#1}}
+\def\@lecture{}
+
+\newcommand{\group}[1]{\def\@group{#1}}
+\def\@group{}
+
+\newcommand{\sheet}[1]{\def\@sheet{#1}}
+\def\@sheet{}
+
+\newcommand{\prof}[1]{\def\@prof{#1}}
+\def\@prof{}
+
+\newcommand{\sheetname}[1]{\def\@sheetname{#1}}
+\def\@sheetname{\lang{Übungsblatt}{Exercise sheet}}
 
 \newcommand{\annotate}[1]{&& \left|\  #1 \right.}
 \newcommand{\annotatet}[1]{\annotate{\text{#1}}}
 
-\newcommand{\@sheetname}[0]{Übungsblatt}
-\newcommand{\sheetname}[1]{
-  \renewcommand{\@sheetname}[0]{#1}
+\lhead{\@author \\ \lang{Universität des Saarlandes}{University of Saarland}}
+\rhead{
+  \lectureandgroup \\
+  \@prof \\
+  \@sheetname\ \@sheet
 }
-
-\lhead{\@author \\ Universität des Saarlandes}
-\rhead{\@lecture, \@group \\ \@prof \\ \@sheetname\ \@sheet}
 \cfoot{\thepage/\pageref{LastPage}}
 \pagestyle{fancy}
 
@@ -59,7 +66,7 @@
 }
 
 \date{}
-\title{\@lecture, \@group\ - \@sheetname\ \@sheet}
+\title{\lectureandgroup\ - \@sheetname\ \@sheet}
 
 \renewcommand{\maketitle}[0]{
   \mbox{\vspace{5em}}
