@@ -1,15 +1,6 @@
 \usepackage[a4paper]{geometry}
 \usepackage[ngerman]{babel}
 
-\usepackage{iftex}
-
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-\else
-  \usepackage{fontspec}
-\fi
-
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{amsmath}
@@ -22,6 +13,16 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{ifthen}
+
+\usepackage{iftex}
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+\fi
 
 \def\sheetlanguageGerman{german}
 \def\sheetlanguageEnglish{english}
