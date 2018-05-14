@@ -1,0 +1,42 @@
+\usepackage[ngerman]{babel}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{iftex}
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+\fi
+
+\newcommand{\annotate}[1]{&& \left|\  #1 \right.}
+\newcommand{\annotatet}[1]{\annotate{\text{#1}}}
+
+\newcommand\equalt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\hspace{1.3cm}=\hspace{1.3cm}}}
+\newcommand\equivt[1]{\stackrel{\mathclap{\normalfont\mbox{#1}}}{\hspace{1.3cm}\equiv\hspace{1.3cm}}}
+
+\newcommand\TODO{
+	\begin{LARGE}
+		\colorbox{red}{TODO}
+	\end{LARGE}
+}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
