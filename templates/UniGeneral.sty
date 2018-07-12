@@ -1,5 +1,3 @@
-\usepackage[ngerman]{babel}
-
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{amsmath}
@@ -12,6 +10,29 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{ifthen}
+
+\def\unilanguageGerman{german}
+\def\unilanguageEnglish{english}
+
+\def\@unilanguage{\unilanguageGerman}
+\DeclareOption{en}{\def\@unilanguage{\unilanguageEnglish}}
+\DeclareOption{de}{\def\@unilanguage{\unilanguageGerman}}
+\ProcessOptions\relax
+
+\usepackage{pdftexcmds}
+\makeatletter
+\newcommand\lang[2]{
+  \ifnum\pdf@strcmp{\@unilanguage}{\unilanguageGerman}=0 %
+     \expandafter\@firstoftwo
+  \else
+    \expandafter\@secondoftwo
+  \fi
+    {#1}
+    {#2}%
+}
+\makeatother
+
+\usepackage[\lang{ngerman}{english}]{babel}
 
 \usepackage{iftex}
 

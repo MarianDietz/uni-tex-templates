@@ -1,18 +1,13 @@
 \usepackage[a4paper]{geometry}
 
-\usepackage{UniGeneral}
-
-\usepackage[shortlabels]{enumitem}
-
-\def\sheetlanguageGerman{german}
-\def\sheetlanguageEnglish{english}
-
-\def\@sheetlanguage{\sheetlanguageGerman}
-\DeclareOption{en}{\def\@sheetlanguage{\sheetlanguageEnglish}}
-\DeclareOption{de}{\def\@sheetlanguage{\sheetlanguageGerman}}
+\def\@sheetlanguage{de}
+\DeclareOption{en}{\def\@sheetlanguage{en}}
+\DeclareOption{de}{\def\@sheetlanguage{de}}
 \ProcessOptions\relax
 
-\newcommand{\lang}[2]{\ifthenelse{\equal{\@sheetlanguage}{\sheetlanguageGerman}}{#1}{#2}}
+\usepackage[\@sheetlanguage]{UniGeneral}
+
+\usepackage[shortlabels]{enumitem}
 
 \newcommand{\lectureandgroup}{\@lecture\ifx\@group\empty\else, \@group\fi}
 
